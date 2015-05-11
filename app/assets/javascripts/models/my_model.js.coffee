@@ -1,0 +1,1 @@
+class BackboneRails.Models.MyModel extends Backbone.Model

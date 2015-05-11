@@ -1,0 +1,5 @@
+<h1>Hello</h1>
+
+<% for my_model in @my_models.models: %>
+    <%= my_model.get("model_number") %>
+<% end %>
