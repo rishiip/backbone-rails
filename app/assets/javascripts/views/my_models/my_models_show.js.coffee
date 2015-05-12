@@ -5,6 +5,7 @@ class BackboneRails.Views.MyModelsShow extends Backbone.View
   initialize: (options) ->
     @my_model = options.my_model
     @initializeSectionNameArray()
+    @saveModelOnSpecificInterval()
 
   events:
     'click #save_my_model': 'saveMyModel'
@@ -25,7 +26,9 @@ class BackboneRails.Views.MyModelsShow extends Backbone.View
       my_attribute.value = $(@getMyModelMyAttributeSelector(my_attribute)).val()
 
   saveIfChanged: ->
-    @fetchCurrentModel()
+    if @fetched_model == undefined
+      @fetchCurrentModel()
+
     @updated_my_attributes = new Array
     for my_attribute in @my_model.get("my_attributes")
       unless _.isEqual(my_attribute, _.findWhere(@fetched_model.get("my_attributes"), {id : my_attribute.id}))
@@ -35,6 +38,7 @@ class BackboneRails.Views.MyModelsShow extends Backbone.View
       @my_model.set("my_attributes", @updated_my_attributes)
       @my_model.save()
       @my_model.set("my_attributes", @fetched_model.get("my_attributes"))
+      @fetchCurrentModel()
 
   fetchCurrentModel: ->
     @fetched_model = new BackboneRails.Collections.MyModels()
@@ -50,6 +54,9 @@ class BackboneRails.Views.MyModelsShow extends Backbone.View
     for my_attribute in @my_model.get("my_attributes")
       section_names.push my_attribute.section_name
     @section_names = _.uniq(section_names)
+
+  saveModelOnSpecificInterval: ->
+    window.setInterval (-> $("#save_my_model").trigger "click"), 4000
 
   render: ->
     $(@el).html(@template(my_model: @my_model, section_names: @section_names))
