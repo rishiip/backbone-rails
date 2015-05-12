@@ -2,7 +2,7 @@ class MyModelsController < ApplicationController
   before_filter :set_modal, :only => [:update]
 
   def index
-    render :json => MyModel.all
+    render :json => MyModel.includes(:my_attributes).all
   end
 
   def update
@@ -18,14 +18,6 @@ class MyModelsController < ApplicationController
     render :json => :ok
   end
 
-  def get_my_attributes
-    render :json => MyModel.find_by_id(params[:id]).my_attributes
-  end
-
-  def get_value
-    render :json => get_my_model_my_attribute(params[:my_model_id], params[:id])
-  end
-
   private
 
   def get_my_model_my_attribute(my_model_id, my_attribute_id)
@@ -33,7 +25,7 @@ class MyModelsController < ApplicationController
   end
 
   def my_model_params
-    params.require(:my_model).permit(:model_number, :description, :my_attributes)
+    params.require(:my_model).permit(:id, :model_number, :description, :my_attributes)
   end
 
   def set_modal

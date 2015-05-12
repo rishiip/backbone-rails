@@ -1,1 +1,0 @@
-class BackboneRails.Collections.MyAttributes extends Backbone.Collection

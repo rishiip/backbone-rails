@@ -1,1 +1,0 @@
-class BackboneRails.Models.MyAttribute extends Backbone.Model
