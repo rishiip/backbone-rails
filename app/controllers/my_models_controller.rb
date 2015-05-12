@@ -7,10 +7,12 @@ class MyModelsController < ApplicationController
 
   def update
     if @my_model.update_attributes(my_model_params)
-      params[:my_attributes].each do |my_attribute|
-        my_model_my_attribute = get_my_model_my_attribute(@my_model.id, my_attribute[:id])
-        my_model_my_attribute.value = my_attribute[:value]
-        my_model_my_attribute.save!
+      if params[:my_attributes].present? then
+        params[:my_attributes].each do |my_attribute|
+          my_model_my_attribute = get_my_model_my_attribute(@my_model.id, my_attribute[:id])
+          my_model_my_attribute.value = my_attribute[:value]
+          my_model_my_attribute.save!
+        end
       end
     end
     render :json => :ok
