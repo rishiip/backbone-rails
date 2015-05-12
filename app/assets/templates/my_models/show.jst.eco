@@ -1,0 +1,4 @@
+Show Action
+<% for my_attribute in @my_model.get("my_attributes"): %>
+    <p><%= my_attribute.name %></p>
+<% end %>
