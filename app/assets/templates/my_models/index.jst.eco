@@ -1,5 +1,5 @@
-<h1>Hello</h1>
+<h1>Models</h1>
 
 <% for my_model in @my_models.models: %>
-    <%= my_model.get("model_number") %>
+    <p><%= my_model.get("model_number") %><a href="/#my_models/<%= my_model.get("id") %>" >Edit</a></p>
 <% end %>
