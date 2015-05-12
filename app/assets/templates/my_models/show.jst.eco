@@ -1,4 +1,11 @@
-Show Action
+Model Number : <%= @my_model.get("model_number") %></br>
+Description : <%= @my_model.get("description") %>
 <% for my_attribute in @my_model.get("my_attributes"): %>
-    <p><%= my_attribute.name %></p>
+    </br>
+    <% if my_attribute.display_type == "text": %>
+        <input type="text" id="<%= my_attribute.section_name.toLowerCase().replace(/[^a-z0-9]+/g, "-") %>-<%= my_attribute.id %>" value="<%= my_attribute.value %>">
+    <% else: %>
+        <textarea id="<%= my_attribute.section_name.toLowerCase().replace(/[^a-z0-9]+/g, "-") %>-<%= my_attribute.id %>"><%= my_attribute.value %></textarea>
+    <% end %>
 <% end %>
+<input type="button" id="save_my_model" value="Save">

@@ -4,17 +4,16 @@ class BackboneRails.Views.MyModelsShow extends Backbone.View
 
   initialize: (options) ->
     @my_model = options.my_model
-    console.log @my_model
-    @my_attributes = options.my_attributes
-    @initializeMyModelMyAttributeCollection()
+    @temp_array = @my_model.get("my_attributes")
 
-  initializeMyModelMyAttributeCollection: ->
-    console.log "initialize"
-#    _.first(@my_model.get("my_attributes")).value = "Rishi Pithadiya"
-#    console.log _.first(@my_model.get("my_attributes")).value
-#    @my_model.save({async:false})
-#    @my_model.set("description", "First test model for Bacancy Technologies Limited - Updated")
-#    @my_model.save()
+  events:
+    'click #save_my_model': 'saveMyModel'
+
+  saveMyModel: ->
+    for my_attribute in @my_model.get("my_attributes")
+      my_model_my_attribute_selector = "#" + my_attribute.section_name.toLowerCase().replace(/[^a-z0-9]+/g, "-") + "-" + my_attribute.id
+      my_attribute.value = $(my_model_my_attribute_selector).val()
+    @my_model.save()
 
   render: ->
     $(@el).html(@template(my_model: @my_model))
