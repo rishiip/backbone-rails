@@ -61,3 +61,8 @@ class BackboneRails.Views.MyModelsShow extends Backbone.View
   render: ->
     $(@el).html(@template(my_model: @my_model, section_names: @section_names))
     this
+
+  initializeEditorOnTextArea: ->
+    my_attributes_with_textarea = $.grep(@my_model.get("my_attributes"), (n) -> _.isEqual(n.display_type, 'textarea'))
+    for my_attribute in my_attributes_with_textarea
+        $(@getMyModelMyAttributeSelector(my_attribute)).editable({inlineMode: false})

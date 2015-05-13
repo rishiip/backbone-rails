@@ -14,5 +14,5 @@ class BackboneRails.Routers.MyModels extends Backbone.Router
 
   show: (id) ->
     view = new BackboneRails.Views.MyModelsShow(my_model: @collection.get(id))
-    view.render()
     $("#container").html(view.render().el)
+    view.initializeEditorOnTextArea()
