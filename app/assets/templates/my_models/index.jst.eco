@@ -6,6 +6,8 @@
     <th></th>
   </tr>
 
+  <!-- Use @my_models collection passed from my_models_index view to make list of MyModel -->
+
   <% for my_model in @my_models.models: %>
     <tr>
       <th><%= my_model.get("model_number") %></th>

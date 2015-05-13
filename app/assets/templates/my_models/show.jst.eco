@@ -14,6 +14,8 @@
     </div>
 </div>
 
+<!-- Dynamically create sections and input controls within that sections -->
+
 <% for section_name in @section_names: %>
     <div class='row top-buffer attributes'>
         <div class="panel cust_panel_border" >

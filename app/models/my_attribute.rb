@@ -2,6 +2,7 @@ class MyAttribute < ActiveRecord::Base
   has_one :my_model_my_attribute
   has_one :my_model, through: :my_model_my_attribute
 
+  # Override as_json to return specific set of attributes while to_json method has been called
   def as_json(options = {})
     {
         id: id,
