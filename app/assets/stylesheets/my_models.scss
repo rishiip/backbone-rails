@@ -2,6 +2,23 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.cust_input_text{
+  border-bottom: 2px solid black;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-radius: inherit;
+}
+
+.cust_panel_border{
+  border: 1px solid #2e79b9;
+}
+
+.cust_index_link_color{
+  background-color: #2e79b9;
+  color: #ffffff;
+}
+
 #save_my_model{
   visibility: hidden;
 }

@@ -1,5 +1,16 @@
-<h1>Models</h1>
+<h1 align="center">Models</h1>
+<table align="center" border="2" cellpadding="10">
+  <tr>
+    <th>Model Number</th>
+    <th style="text-align: center;">Description</th>
+    <th></th>
+  </tr>
 
-<% for my_model in @my_models.models: %>
-    <p><%= my_model.get("model_number") %><a href="/#my_models/<%= my_model.get("id") %>" >Edit</a></p>
-<% end %>
+  <% for my_model in @my_models.models: %>
+    <tr>
+      <th><%= my_model.get("model_number") %></th>
+      <th><%= my_model.get("description") %></th>
+      <th><a href="/#my_models/<%= my_model.get("id") %>" >Edit</a></th>
+    </tr>
+  <% end %>
+</table>

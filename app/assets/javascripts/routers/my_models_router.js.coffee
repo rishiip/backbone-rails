@@ -10,9 +10,9 @@ class BackboneRails.Routers.MyModels extends Backbone.Router
 
   index: ->
     view = new BackboneRails.Views.MyModelsIndex(collection: @collection)
-    $("#container").html(view.render().el)
+    $("#my_model").html(view.render().el)
 
   show: (id) ->
     view = new BackboneRails.Views.MyModelsShow(my_model: @collection.get(id))
-    $("#container").html(view.render().el)
+    $("#my_model").html(view.render().el)
     view.initializeEditorOnTextArea()

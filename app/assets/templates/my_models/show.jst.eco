@@ -1,16 +1,48 @@
-Model Number :  <input type="text" id="my_model_number" value="<%= @my_model.get("model_number") %>"></br>
-Description : <input type="text" id="my_model_description" value="<%= @my_model.get("description") %>">
+<div class="container top-buffer">
+<div class='row models'>
+    <div class="form-group col-sm-4">
+        <span class="col-sm-5">Model Number:</span>
+        <div class="col-sm-6">
+            <input type="text" id="my_model_number" class="form-control cust_input_text" value="<%= @my_model.get("model_number") %>">
+        </div>
+    </div>
+    <div class="form-group col-sm-6">
+        <span class="col-sm-2">Description:</span>
+        <div class="col-sm-10">
+            <input type="text" id="my_model_description" class="form-control cust_input_text" value="<%= @my_model.get("description") %>">
+        </div>
+    </div>
+</div>
+
 <% for section_name in @section_names: %>
-    <p><%= section_name %></p>
-    <% for my_attribute in @my_model.get("my_attributes"): %>
-        <% if my_attribute.section_name == section_name: %>
-            <% if my_attribute.display_type == "text": %>
-                <input type="text" id="<%= my_attribute.section_name.toLowerCase().replace(/[^a-z0-9]+/g, "-") %>-<%= my_attribute.id %>" value="<%= my_attribute.value %>">
-            <% else: %>
-                <textarea id="<%= my_attribute.section_name.toLowerCase().replace(/[^a-z0-9]+/g, "-") %>-<%= my_attribute.id %>"><%= my_attribute.value %></textarea>
-            <% end %>
-        <% end %>
-    <% end %>
+    <div class='row top-buffer attributes'>
+        <div class="panel cust_panel_border" >
+            <div class="panel-heading theme">
+                <h3 class="panel-title"><%= section_name %></h3>
+            </div>
+            <div class="panel-body">
+                <% for my_attribute in @my_model.get("my_attributes"): %>
+                    <% if my_attribute.section_name == section_name: %>
+                        <% if my_attribute.display_type == "text": %>
+                            <div class="form-group col-sm-4">
+                        <% else: %>
+                            <div class="form-group col-sm-12">
+                        <% end %>
+                            <span class="col-sm-4"><%= my_attribute.name %></span>
+                            <div class="col-sm-8">
+                                <% if my_attribute.display_type == "text": %>
+                                    <input type="text" class="form-control" id="<%= my_attribute.section_name.toLowerCase().replace(/[^a-z0-9]+/g, "-") %>-<%= my_attribute.id %>" value="<%= my_attribute.value %>">
+                                <% else: %>
+                                    <textarea class="form-control" id="<%= my_attribute.section_name.toLowerCase().replace(/[^a-z0-9]+/g, "-") %>-<%= my_attribute.id %>"><%= my_attribute.value %></textarea>
+                                <% end %>
+                            </div>
+                        </div>
+                    <% end %>
+                <% end %>
+            </div>
+        </div>
+    </div>
 <% end %>
+<a href="#" class="btn btn-default theme-btn cust_index_link_color">Click to go Back</a></br>
 <input type="button" id="save_my_model" value="Save">
-<a href="#">Back to Index</a>
+</div>
