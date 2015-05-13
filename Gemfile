@@ -8,6 +8,8 @@ group :production do
   gem 'pg'
   gem 'rails_12factor'
 end
+gem 'font-awesome-rails'
+gem 'wysiwyg-rails'
 gem 'sass-rails', '~> 5.0'
 gem 'backbone-on-rails'
 gem 'uglifier', '>= 1.3.0'
