@@ -10,6 +10,9 @@ group :production do
 end
 gem 'font-awesome-rails'
 gem 'wysiwyg-rails'
+gem 'therubyracer'
+gem 'less-rails'
+gem 'twitter-bootstrap-rails'
 gem 'sass-rails', '~> 5.0'
 gem 'backbone-on-rails'
 gem 'uglifier', '>= 1.3.0'

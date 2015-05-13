@@ -1,0 +1,238 @@
+header a {
+    color: #191919;
+}
+
+header .navbar-brand {
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: -1px;
+    padding-bottom: 2px;
+}
+
+.top-header{
+    background-color: #10385b;
+    margin-bottom: 0px;
+}
+
+.top-container {
+    margin-bottom:-1px;
+}
+
+@media (min-width: 768px) {
+    .top-container {
+        padding-right:0px;
+    }
+}
+
+
+body {
+    background: #eee !important;
+}
+
+/*
+ * Tables
+ */
+
+.header {
+    background: #fff;
+}
+
+/*
+ * Global
+ */
+
+.bs-docs-nav .navbar-toggle .icon-bar {
+    background-color: #563d7c;
+}
+
+.wrapper {
+    margin-top: 20px;
+    margin-bottom: 80px;
+}
+
+.wrapper .btn-default, .theme-btn {
+    background-color: #2e79b9;
+    color: #fff;
+}
+
+.theme {
+    background-color: #2e79b9;
+    color: #fff;
+}
+
+.brand-line {
+    border-bottom: 2px solid #F3B812;
+    display: block;
+}
+
+.top-buffer { margin-top:20px; }
+.padding-left-20 { padding-left:20px !important; }
+.padding-left-40 { padding-left:40px !important; }
+
+/*
+ * Misc
+ */
+
+.search-bar .input-group{
+    margin:15px auto;
+}
+
+.active a {
+    color: #f3b812;
+}
+
+.current a {
+    color: #5b5b5b;
+}
+
+.menu-btn a {
+    cursor: pointer;
+}
+
+/*
+ * Dashboard
+ */
+
+.dashbord-page {
+    margin-left:auto;
+    margin-right:auto;
+    max-width: 500px;
+}
+
+.dashbord-page .page-header {
+    font-weight: bold;
+}
+
+.dashbord-page .btn-block {
+    width: 60%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+/*
+ * Login
+ */
+
+.form-signin {
+    max-width: 380px;
+    padding: 15px 35px 45px;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+.logout {
+    color: #a1a1a1;
+    font-weight: bold;
+    cursor:pointer;
+}
+
+.btn-logout {
+    background-color: #c7c7cc;
+    color: #fff;
+}
+
+/*
+ * Upload
+ */
+
+.upload-img-div.thumbnail {
+    /*height: 125px;*/
+}
+
+.upload-img-div.thumbnail, .upload-btn {
+    width:333px
+}
+
+.upload-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.upload-btn input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+/*
+ * Pagination
+ */
+
+.pagination li.disabled:not(.prev):not(.next) a, .pagination li.disabled:not(.prev):not(.next) a:focus {
+    background-color: #F3B812;
+    color: #fff;
+}
+
+.pagination-btn {
+    clear: both;
+    width: 100%;
+}
+
+.pagination-btn .older {
+    float: right;
+}
+
+.pagination-ctrl {
+    display: none;
+}
+
+/**
+ * Users
+ */
+
+.totalUsersCount {
+    display: none;
+    float:left;
+}
+
+.users-highlighted {
+    color:#5cb85c;
+}
+
+/**
+ * Orders
+ */
+
+.totalOrdersCount {
+    display: none;
+    float:left;
+}
+
+/*
+ * Orders status
+ */
+
+.order-status-completed {
+    background-color: #5cb85c;
+}
+
+.order-status-pending {
+    background-color: #f0ad4e;
+}
+
+.order-status-refunded {
+    background-color: #d9534f;
+}
+
+.order-detail-highlight {
+    color: #d9534f;
+}
+
+#order-detail-body #user-fname-inpt{
+    cursor: pointer;
+}
+
+/*
+* Store Profile
+*/
+.opening-hours-tbl{
+    background-color: #fff;
+    border:1px solid #cccccc;
+}
